@@ -20,6 +20,11 @@ var cbpAnimatedHeader = (function() {
 			if( !didScroll ) {
 				didScroll = true;
 				setTimeout( scrollPage, 250 );
+				//collapse the responsive navigation dropdown after a title is clicked
+				$("body nav div.navbar-collapse ul li ").click(function() {
+                    			if ($(window).width() < 960) {
+                        			$("body nav div.navbar-header button").click();
+                    			}
 			}
 		}, false );
 	}
